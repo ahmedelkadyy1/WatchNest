@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Falcon and the Winter Soldier</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            scroll-padding-top: 2rem;
+        }
+
+        :root {
+            --main-color: #ffb43a;
+            --hover-color: hsl(37, 94%, 57%);
+            --body-color: #1e1e2a;
+            --container-color: #2d2e37;
+            --text-color: #fcfeff;
+        }
+
+        body {
+            background: var(--body-color);
+            color: var(--text-color);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            color: var(--text-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0 auto 0 0;
+        }
+
+        .logo span {
+            color: var(--main-color);
+        }
+
+        .watch {
+            max-width: 1200px;
+            margin: auto;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--body-color);
+        }
+
+        .movie {
+            width: 100%;
+            height: 100%;
+        }
+
+        .select-seasonep {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            max-width: 1200px;
+            width: 100%;
+            height: 700px;
+            margin: auto;
+            background-color: #27282b;
+            border-radius: 10px;
+            margin-bottom: 100px;
+        }
+
+        .eps {
+            margin-top: 10rem;
+            text-align: center;
+        }
+
+        .eps h1 {
+            margin-bottom: 70px;
+        }
+
+        .eps button {
+            padding: 10px 20px;
+            background: var(--container-color);
+            color: var(--text-color);
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            border-radius: 4px;
+            margin-right: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .eps button:hover {
+            background: var(--main-color);
+            color: var(--container-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a href="index.html" class="logo">
+            Watch<span>Nest</span></a>
+        </div>
+    </header>
+
+    <section class="watch">
+        <div class="movie">
+            <iframe src="https://vidsrc.me/embed/tv?imdb=tt9208876" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="select-seasonep">
+        <div class="eps1 eps">
+            <h1>Season 1</h1>
+            <button class="epbtn1">Episode 1</button>
+            <button class="epbtn2">Episode 2</button>
+            <button class="epbtn3">Episode 3</button>
+            <button class="epbtn4">Episode 4</button>
+            <button class="epbtn5">Episode 5</button>
+            <button class="epbtn6">Episode 6</button>
+        </div>
+    </section>
+
+    <script>
+        const buttons = document.querySelectorAll('.eps button');
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const episodeNumber = index + 1;
+                document.querySelector('.movie').innerHTML = `<iframe src="https://vidsrc.me/embed/tv?imdb=tt9208876&season=1&episode=${episodeNumber}" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>`;
+            });
+        });
+    </script>
+</body>
+</html>
